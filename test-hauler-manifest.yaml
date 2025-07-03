@@ -11,11 +11,11 @@ metadata:
 spec:
   images:
     # renovate: datasource=docker
-    - name: registry.k8s.io/sig-storage/csi-attacher:v4.7.0
+    - name: registry.k8s.io/sig-storage/csi-attacher:v4.9.0
     # renovate: datasource=docker
-    - name: registry.k8s.io/sig-storage/csi-node-driver-registrar:v2.12.0
+    - name: registry.k8s.io/sig-storage/csi-node-driver-registrar:v2.14.0
     # renovate: datasource=docker
-    - name: registry.k8s.io/sig-storage/csi-provisioner:v5.1.0
+    - name: registry.k8s.io/sig-storage/csi-provisioner:v5.3.0
     # renovate: datasource=docker
     - name: quay.io/datashim-io/generate-keys:0.4.1
     # renovate: datasource=docker
@@ -47,7 +47,7 @@ metadata:
 spec:
   images:
     # renovate: datasource=docker
-    - name: registry.k8s.io/external-dns/external-dns:v0.15.0
+    - name: registry.k8s.io/external-dns/external-dns:v0.18.0
 ---
 apiVersion: content.hauler.cattle.io/v1alpha1
 kind: Charts
@@ -58,7 +58,7 @@ spec:
     # renovate: datasource=helm depName=external-dns registryUrl=https://kubernetes-sigs.github.io/external-dns
     - name: external-dns
       repoURL: https://kubernetes-sigs.github.io/external-dns
-      version: 1.15.0
+      version: 1.17.0
 
 ### -----------------------------------------
 ### Kube-VIP
@@ -73,9 +73,9 @@ metadata:
 spec:
   images:
     # renovate: datasource=docker
-    - name: ghcr.io/kube-vip/kube-vip-cloud-provider:v0.0.10
+    - name: ghcr.io/kube-vip/kube-vip-cloud-provider:v0.0.12
     # renovate: datasource=docker
-    - name: ghcr.io/kube-vip/kube-vip:v0.8.7
+    - name: ghcr.io/kube-vip/kube-vip:v0.9.2
 ---
 apiVersion: content.hauler.cattle.io/v1alpha1
 kind: Charts
@@ -86,11 +86,11 @@ spec:
     # renovate: datasource=helm depName=kube-vip registryUrl=https://kube-vip.github.io/helm-charts
     - name: kube-vip
       repoURL: https://kube-vip.github.io/helm-charts
-      version: 0.6.3
+      version: 0.6.6
     # renovate: datasource=helm depName=kube-vip-cloud-provider registryUrl=https://kube-vip.github.io/helm-charts
     - name: kube-vip-cloud-provider
       repoURL: https://kube-vip.github.io/helm-charts
-      version: 0.2.2
+      version: 0.2.5
 
 ### -----------------------------------------
 ### Splunk
@@ -105,11 +105,11 @@ metadata:
 spec:
   images:
     # renovate: datasource=docker
-    - name: docker.io/splunk/splunk:9.3.2
+    - name: docker.io/splunk/splunk:9.4.3
     # renovate: datasource=docker
-    - name: docker.io/splunk/splunk-operator:2.7.0
+    - name: docker.io/splunk/splunk-operator:2.8.0
     # renovate: datasource=docker
-    - name: quay.io/brancz/kube-rbac-proxy:v0.13.1
+    - name: quay.io/brancz/kube-rbac-proxy:v0.19.1
 
 ---
 apiVersion: content.hauler.cattle.io/v1alpha1
@@ -121,11 +121,11 @@ spec:
     # renovate: datasource=helm depName=splunk-enterprise registryUrl=https://splunk.github.io/splunk-operator
     - name: splunk-enterprise
       repoURL: https://splunk.github.io/splunk-operator
-      version: 2.7.0
+      version: 2.8.0
     # renovate: datasource=helm depName=splunk-operator registryUrl=https://splunk.github.io/splunk-operator
     - name: splunk-operator
       repoURL: https://splunk.github.io/splunk-operator
-      version: 2.7.0
+      version: 2.8.0
 ---
 apiVersion: content.hauler.cattle.io/v1alpha1
 kind: Files
@@ -149,7 +149,7 @@ metadata:
 spec:
   images:
     # renovate: datasource=docker
-    - name: docker.io/cribl/cribl:4.9.3
+    - name: docker.io/cribl/cribl:4.12.2
 ---
 apiVersion: content.hauler.cattle.io/v1alpha1
 kind: Charts
@@ -160,15 +160,15 @@ spec:
     # renovate: datasource=helm depName=logstream-leader registryUrl=https://criblio.github.io/helm-charts
     - name: logstream-leader
       repoURL: https://criblio.github.io/helm-charts
-      version: 4.9.3
+      version: 4.12.2
     # renovate: datasource=helm depName=logstream-workergroup registryUrl=https://criblio.github.io/helm-charts
     - name: logstream-workergroup
       repoURL: https://criblio.github.io/helm-charts
-      version: 4.9.3
+      version: 4.12.2
     # renovate: datasource=helm depName=edge registryUrl=https://criblio.github.io/helm-charts
     - name: edge
       repoURL: https://criblio.github.io/helm-charts
-      version: 4.9.3
+      version: 4.12.2
 ---
 apiVersion: content.hauler.cattle.io/v1alpha1
 kind: Files
