@@ -21,6 +21,21 @@
         "patch"
       ],
       "automerge": true
+    },
+    {
+      "description": "Handle Cribl TGZ hash update",
+      "matchDepNames": [
+        "cribl-tgz-file"
+      ],
+      "postUpgradeTasks": {
+        "commands": [
+          "sed -i -E 's/cribl-([0-9]+\\.[0-9]+\\.[0-9]+)-[a-f0-9]+-linux-x64\\.tgz/cribl-\\1-MANUAL-HASH-UPDATE-NEEDED-linux-x64.tgz/g' {{{parentDir}}}/test-hauler-manifest.yaml"
+        ],
+        "fileFilters": [
+          "**/*"
+        ],
+        "executionMode": "branch"
+      }
     }
   ],
   "customManagers": [
@@ -58,16 +73,7 @@
       ],
       "datasourceTemplate": "custom.cribl-releases",
       "depNameTemplate": "cribl-tgz-file",
-      "extractVersionTemplate": "Cribl Stream (?<version>\\d+\\.\\d+\\.\\d+)",
-      "postUpgradeTasks": {
-        "commands": [
-          "sed -i -E 's/cribl-([0-9]+\\.[0-9]+\\.[0-9]+)-[a-f0-9]+-linux-x64\\.tgz/cribl-\\1-MANUAL-HASH-UPDATE-NEEDED-linux-x64.tgz/g' {{{parentDir}}}/test-hauler-manifest.yaml"
-        ],
-        "fileFilters": [
-          "**/*"
-        ],
-        "executionMode": "branch"
-      }
+      "extractVersionTemplate": "Cribl Stream (?<version>\\d+\\.\\d+\\.\\d+)"
     }
   ],
   "customDatasources": {
