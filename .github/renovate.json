@@ -53,13 +53,11 @@
         "test-hauler-manifest.yaml"
       ],
       "matchStrings": [
-        "(path:\\s*https://cdn\\.cribl\\.io/dl/)(?<currentValue>.*)"
+        "(path:\\s*https://cdn\\.cribl\\.io)(?<currentValue>.*)"
       ],
       "datasourceTemplate": "url",
       "depNameTemplate": "https://docs.cribl.io/stream/release-notes",
-      "versioningTemplate": "regex",
-      "extractVersionTemplate": "^/dl/(?<version>\\d+\\.\\d+\\.\\d+)/cribl-\\d+\\.\\d+\\.\\d+-(?<digest>[a-f0-9]+)-linux-x64\\.tgz$",
-      "replaceStringTemplate": "{{{depName}}}{{{newValue}}}"
+      "versioningTemplate": "regex:^/dl/(?<version>\\d+\\.\\d+\\.\\d+)/cribl-\\d+\\.\\d+\\.\\d+-(?<digest>[a-f0-9]+)-linux-x64\\.tgz$"
     }
   ]
 }
