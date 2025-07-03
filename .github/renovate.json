@@ -31,7 +31,7 @@
         "(^|/).*hauler-manifest\\.ya?ml$"
       ],
       "matchStrings": [
-        "kind:\\s*Images(?:.|\\n)*?spec:\\s*\\n\\s*images:\\s*\\n(?:\\s*-\\s+name:\\s*['\"]?(?<depName>[\\w.\\-/]+):(?<currentValue>[\\w.\\-]+)['\"]?\\s*\\n?)+"
+        "#\\s*renovate:\\s+datasource=(?<datasource>docker)\\s*\\n\\s*-\\s+name:\\s*['\"]?(?<depName>[\\w.\\-/]+):(?<currentValue>[\\w.\\-]+)['\"]?"
       ],
       "datasourceTemplate": "docker",
       "versioningTemplate": "docker"
@@ -43,9 +43,8 @@
         "(^|/).*hauler-manifest\\.ya?ml$"
       ],
       "matchStrings": [
-        "kind:\\s*Charts(?:.|\\n)*?spec:\\s*\\n\\s*charts:\\s*\\n(?:\\s*-\\s+name:\\s*['\"]?(?<depName>[\\w.\\-]+)['\"]?\\s*\\n\\s*version:\\s*['\"]?(?<currentValue>v?[\\d.]+(:?-[\\w.\\-]+)?)['\"]?\\s*\\n\\s*repoURL:\\s*(?<registryUrl>https?://[^\\s]+)\\s*\\n?)+"
+        "?(?<currentValue>v?[\\d.]+(:?-[^'\"]+)?)['\"]?"
       ],
-      "datasourceTemplate": "helm",
       "versioningTemplate": "semver"
     }
   ]
