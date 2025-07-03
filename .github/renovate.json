@@ -27,25 +27,24 @@
     {
       "customType": "regex",
       "description": "Update Docker images in Hauler manifests",
-      "managerFilePatterns": [
-        "(^|/).*hauler-manifest\\.ya?ml$"
+      "fileMatch": [
+        "(^|/)test-hauler-manifest\\.ya?ml$"
       ],
       "matchStrings": [
-        "#\\s*renovate:\\s+datasource=(?<datasource>docker)\\s*\\n\\s*-\\s+name:\\s*['\"]?(?<depName>[\\w.\\-/]+):(?<currentValue>[\\w.\\-]+)['\"]?"
+        "datasource=(?<datasource>docker)\\s*depName=(?<depName>.*)\\s*-\\s+name:\\s.*:(?<currentValue>.*)"
       ],
-      "datasourceTemplate": "docker",
-      "versioningTemplate": "docker"
+      "datasourceTemplate": "docker"
     },
     {
       "customType": "regex",
       "description": "Update Helm charts in Hauler manifests",
-      "managerFilePatterns": [
-        "(^|/).*hauler-manifest\\.ya?ml$"
+      "fileMatch": [
+        "(^|/)test-hauler-manifest\\.ya?ml$"
       ],
       "matchStrings": [
-        "?(?<currentValue>v?[\\d.]+(:?-[^'\"]+)?)['\"]?"
+        "datasource=(?<datasource>helm)\\s*depName=(?<depName>.*?)\\s*registryUrl=(?<registryUrl>.*?)\\s*-\\s+name:.*\\s+repoURL:.*\\s+version:\\s*(?<currentValue>.*)"
       ],
-      "versioningTemplate": "semver"
+      "datasourceTemplate": "helm"
     }
   ]
 }
