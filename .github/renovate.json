@@ -39,7 +39,7 @@
         "(^|\\n)kind:\\s+Charts\\n"
       ],
       "managerFilePatterns": [
-        "(^|/)hauler-manifest\\.ya?ml$"
+        "(^|/).*hauler-manifest\\.ya?ml$"
       ],
       "matchStrings": [
         "-\\s+name:\\s*['\"]?(?<depName>[\\w.\\-]+)['\"]?\\s*\\n\\s*repoURL:\\s*(?<registryUrl>https?://[^\\s]+)\\s*\\n\\s*version:\\s*['\"]?(?<currentValue>v?[\\d.]+(:?-[\\w.\\-]+)?)['\"]?"
