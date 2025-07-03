@@ -3,6 +3,9 @@
   "extends": [
     "config:recommended"
   ],
+  "allowedCommands": [
+    "^sed -i -E 's\\|https://cdn\\.cribl\\.io/dl/.*?/cribl-.*?\\.tgz\\|.*?\\|' {{{parentDir}}}/test-hauler-manifest\\.yaml$"
+  ],
   "packageRules": [
     {
       "description": "Group all Hauler manifest updates",
