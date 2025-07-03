@@ -31,7 +31,7 @@
         "(^|/).*hauler-manifest\\.ya?ml$"
       ],
       "matchStrings": [
-        "kind:\\s*(Images(?:.|\\n)*?spec:\\s*\\n\\s*images:\\s*\\n(?:\\s*-\\s+name:\\s*['\"]?(?<depName>[\\w.\\-/]+):(?<currentValue>[\\w.\\-]+)['\"]?"
+        "kind:\\s*Images(?:.|\\n)*?spec:\\s*\\n\\s*images:\\s*\\n(?:\\s*-\\s+name:\\s*['\"]?(?<depName>[\\w.\\-/]+):(?<currentValue>[\\w.\\-]+)['\"]?\\s*\\n?)+"
       ],
       "datasourceTemplate": "docker",
       "versioningTemplate": "docker"
