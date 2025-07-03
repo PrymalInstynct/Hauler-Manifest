@@ -1,18 +1,25 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base"
+    "config:recommended"
   ],
   "packageRules": [
     {
       "description": "Group all Hauler manifest updates",
-      "matchManagers": ["regex"],
+      "matchManagers": [
+        "custom.regex"
+      ],
       "groupName": "hauler-manifest-updates"
     },
     {
       "description": "Automerge non-major updates for Hauler assets",
-      "matchManagers": ["regex"],
-      "matchUpdateTypes": ["minor", "patch"],
+      "matchManagers": [
+        "custom.regex"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
       "automerge": true
     }
   ],
@@ -20,11 +27,9 @@
     {
       "customType": "regex",
       "description": "Update Docker images in Hauler manifests",
-      "fileMatch": [
-        "(^|\\n)kind:\\s+Images\\n"
-      ],
       "managerFilePatterns": [
-        "(^|/).*hauler-manifest\\.ya?ml$"
+        "(^|/).*hauler-manifest\\.ya?ml$",
+        "/(^|\\n)kind:\\s+Images\\n/"
       ],
       "matchStrings": [
         "-\\s+name:\\s*['\"]?(?<depName>[\\w.\\-/]+):(?<currentValue>[\\w.\\-]+)['\"]?"
@@ -35,11 +40,9 @@
     {
       "customType": "regex",
       "description": "Update Helm charts in Hauler manifests",
-      "fileMatch": [
-        "(^|\\n)kind:\\s+Charts\\n"
-      ],
       "managerFilePatterns": [
-        "(^|/).*hauler-manifest\\.ya?ml$"
+        "(^|/).*hauler-manifest\\.ya?ml$",
+        "/(^|\\n)kind:\\s+Charts\\n/"
       ],
       "matchStrings": [
         "-\\s+name:\\s*['\"]?(?<depName>[\\w.\\-]+)['\"]?\\s*\\n\\s*repoURL:\\s*(?<registryUrl>https?://[^\\s]+)\\s*\\n\\s*version:\\s*['\"]?(?<currentValue>v?[\\d.]+(:?-[\\w.\\-]+)?)['\"]?"
