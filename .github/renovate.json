@@ -31,7 +31,7 @@
         "(^|/)test-hauler-manifest\\.ya?ml$"
       ],
       "matchStrings": [
-        "datasource=(?<datasource>docker)\\s*depName=(?<depName>.*)\\s*-\\s+name:\\s.*:(?<currentValue>.*)"
+        "datasource=(?<datasource>docker)\\s*\\n\\s*-\\s+name:\\s+(?<depName>.*?):(?<currentValue>.*)"
       ],
       "datasourceTemplate": "docker"
     },
