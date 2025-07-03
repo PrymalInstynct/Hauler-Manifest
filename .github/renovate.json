@@ -72,7 +72,7 @@
       ],
       "datasourceTemplate": "custom.cribl-releases",
       "depNameTemplate": "cribl-tgz-file",
-      "extractVersionTemplate": "Cribl Stream (?<version>\\d+\\.\\d+\\.\\d+)"
+      "extractVersionTemplate": "Cribl\\s*Stream\\s*(?<version>\\d+\\.\\d+\\.\\d+)"
     }
   ],
   "customDatasources": {
