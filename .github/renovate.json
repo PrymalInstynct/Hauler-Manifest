@@ -29,7 +29,7 @@
       ],
       "postUpgradeTasks": {
         "commands": [
-          "sed -i -E 's/cribl-([0-9]+\\.[0-9]+\\.[0-9]+)-[a-f0-9]+-linux-x64\\.tgz/cribl-\\1-MANUAL-HASH-UPDATE-NEEDED-linux-x64.tgz/g' {{{parentDir}}}/test-hauler-manifest.yaml"
+          "sed -i -E 's|(https://cdn\\.cribl\\.io/dl/([0-9]+\\.[0-9]+\\.[0-9]+)/)cribl-.*?-linux-x64\\.tgz|\\1cribl-\\2-MANUAL-HASH-UPDATE-NEEDED-linux-x64.tgz|' {{{parentDir}}}/test-hauler-manifest.yaml"
         ],
         "fileFilters": [
           "**/*"
