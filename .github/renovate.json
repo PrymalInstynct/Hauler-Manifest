@@ -1,0 +1,45 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base"
+  ],
+  "packageRules": [
+    {
+      "description": "Group all Hauler manifest updates",
+      "matchManagers": ["regex"],
+      "groupName": "hauler-manifest-updates"
+    },
+    {
+      "description": "Automerge non-major updates for Hauler assets",
+      "matchManagers": ["regex"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    }
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Update Docker images in Hauler manifests",
+      "managerFilePatterns": [
+        "(^|/).*hauler-manifest\\.ya?ml$"
+      ],
+      "matchStrings": [
+        "kind:\\s+Images(?:.|\\n)*?spec:\\s*\\n\\s*images:\\s*\\n(?:\\s*-\\s+name:\\s*['\"]?(?<depName>[\\w.\\-/]+):(?<currentValue>[\\w.\\-]+)['\"]?\\s*\\n?)+"
+      ],
+      "datasourceTemplate": "docker",
+      "versioningTemplate": "docker"
+    },
+    {
+      "customType": "regex",
+      "description": "Update Helm charts in Hauler manifests",
+      "managerFilePatterns": [
+        "(^|/)hauler-manifest\\.ya?ml$"
+      ],
+      "matchStrings": [
+        "kind:\\s+Charts(?:.|\\n)*?spec:\\s*\\n\\s*charts:\\s*\\n(?:\\s*-\\s+(?:(?:name:\\s*['\"]?(?<depName>[\\w.\\-]+)['\"]?\\s*\\n\\s*version:\\s*['\"]?(?<currentValue>v?[\\d.]+(:?-[\\w.\\-]+)?)['\"]?\\s*\\n\\s*repoURL:\\s*(?<registryUrl>https?://[^\\s]+))|(?:name:\\s*['\"]?(?<depName>[\\w.\\-]+)['\"]?\\s*\\n\\s*repoURL:\\s*(?<registryUrl>https?://[^\\s]+)\\s*\\n\\s*version:\\s*['\"]?(?<currentValue>v?[\\d.]+(:?-[\\w.\\-]+)?)['\"]?)|(?:version:\\s*['\"]?(?<currentValue>v?[\\d.]+(:?-[\\w.\\-]+)?)['\"]?\\s*\\n\\s*name:\\s*['\"]?(?<depName>[\\w.\\-]+)['\"]?\\s*\\n\\s*repoURL:\\s*(?<registryUrl>https?://[^\\s]+))|(?:version:\\s*['\"]?(?<currentValue>v?[\\d.]+(:?-[\\w.\\-]+)?)['\"]?\\s*\\n\\s*repoURL:\\s*(?<registryUrl>https?://[^\\s]+)\\s*\\n\\s*name:\\s*['\"]?(?<depName>[\\w.\\-]+)['\"]?)|(?:repoURL:\\s*(?<registryUrl>https?://[^\\s]+)\\s*\\n\\s*name:\\s*['\"]?(?<depName>[\\w.\\-]+)['\"]?\\s*\\n\\s*version:\\s*['\"]?(?<currentValue>v?[\\d.]+(:?-[\\w.\\-]+)?)['\"]?)|(?:repoURL:\\s*(?<registryUrl>https?://[^\\s]+)\\s*\\n\\s*version:\\s*['\"]?(?<currentValue>v?[\\d.]+(:?-[\\w.\\-]+)?)['\"]?\\s*\\n\\s*name:\\s*['\"]?(?<depName>[\\w.\\-]+)['\"]?))\\s*\\n?)+"
+      ],
+      "datasourceTemplate": "helm",
+      "versioningTemplate": "semver"
+    }
+  ]
+}
