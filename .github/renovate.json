@@ -4,7 +4,7 @@
     "config:recommended"
   ],
   "allowedCommands": [
-    "^sed.*$"
+    "sed -i -E 's\\|(https://cdn\\.cribl\\.io/dl/([0-9]+\\.[0-9]+\\.[0-9]+)/)cribl-.*?-linux-x64\\.tgz\\|\\\\1cribl-\\\\2-MANUAL-HASH-UPDATE-NEEDED-linux-x64.tgz\\|' {{{parentDir}}}/test-hauler-manifest.yaml"
   ],
   "packageRules": [
     {
