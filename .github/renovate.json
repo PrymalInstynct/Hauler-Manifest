@@ -65,7 +65,7 @@
       "format": "html",
       "defaultRegistryUrlTemplate": "https://cribl.io/download",
       "transformTemplates": [
-        "{\"releases\": $map(**.item, function($v) { $v.item.['data-value'] }).[].$}"
+        "{\"releases\": $..['data-value']}"
       ]
     }
   }
