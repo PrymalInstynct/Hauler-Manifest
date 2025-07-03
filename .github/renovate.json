@@ -64,7 +64,9 @@
     "cribl-releases": {
       "format": "html",
       "defaultRegistryUrlTemplate": "https://cribl.io/download",
-      "linkExtraction": "data-value=\"(https://cdn\\.cribl\\.io/dl/.*?)\""
+      "transformTemplates": [
+        "{\"releases\": $map(**.item, function($v) { $v.item.['data-value'] }).[].$}"
+      ]
     }
   }
 }
