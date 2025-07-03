@@ -28,7 +28,7 @@
       "customType": "regex",
       "description": "Update Docker images in Hauler manifests",
       "managerFilePatterns": [
-        ".*hauler-manifest\\.ya?ml$"
+        ".*-?hauler-manifest\\.ya?ml$"
       ],
       "matchStrings": [
         "datasource=(?<datasource>docker)\\s*\\n\\s*-\\s+name:\\s+(?<depName>.*?):(?<currentValue>.*)"
@@ -39,7 +39,7 @@
       "customType": "regex",
       "description": "Update Helm charts in Hauler manifests",
       "managerFilePatterns": [
-        ".*hauler-manifest\\.ya?ml$"
+        ".*-?hauler-manifest\\.ya?ml$"
       ],
       "matchStrings": [
         "datasource=(?<datasource>helm)\\s*depName=(?<depName>.*?)\\s*registryUrl=(?<registryUrl>.*?)\\s*-\\s+name:.*\\s+repoURL:.*\\s+version:\\s*(?<currentValue>.*)"
@@ -50,7 +50,7 @@
       "customType": "regex",
       "description": "Update Cribl files in Hauler manifests",
       "managerFilePatterns": [
-        ".*hauler-manifest\\.ya?ml$"
+        ".*-?hauler-manifest\\.ya?ml$"
       ],
       "matchStrings": [
         "path:\\s+https://cdn\\.cribl\\.io/dl/(?<currentValue>.*?)/cribl-.*?\\.tgz"
