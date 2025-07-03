@@ -25,7 +25,7 @@
     {
       "description": "Handle Cribl TGZ hash update",
       "matchDepNames": [
-        "cribl-tgz-file"
+        "criblio/helm-charts"
       ],
       "postUpgradeTasks": {
         "commands": [
@@ -70,15 +70,8 @@
       "matchStrings": [
         "path:\\s*https://cdn\\.cribl\\.io/dl/(?<currentValue>\\d+\\.\\d+\\.\\d+)/cribl-.*?-linux-x64\\.tgz"
       ],
-      "datasourceTemplate": "custom.cribl-releases",
-      "depNameTemplate": "cribl-tgz-file",
-      "extractVersionTemplate": "Cribl\\s*Stream\\s*(?<version>\\d+\\.\\d+\\.\\d+)"
+      "datasourceTemplate": "github-tags",
+      "depNameTemplate": "criblio/helm-charts"
     }
-  ],
-  "customDatasources": {
-    "cribl-releases": {
-      "format": "html",
-      "defaultRegistryUrlTemplate": "https://docs.cribl.io/stream/release-notes"
-    }
-  }
+  ]
 }
