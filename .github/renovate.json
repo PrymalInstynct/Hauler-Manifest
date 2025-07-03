@@ -59,8 +59,7 @@
       "matchStrings": [
         "#\\s*renovate:\\s*datasource=(?<datasource>helm)\\s*depName=(?<depName>.*?)\\s*registryUrl=(?<registryUrl>.*?)[\\s\\S]*?version:\\s*(?<currentValue>\\S+)"
       ],
-      "datasourceTemplate": "helm",
-      "registryUrlTemplate": "{{{registryUrl}}}"
+      "datasourceTemplate": "helm"
     },
     {
       "customType": "regex",
