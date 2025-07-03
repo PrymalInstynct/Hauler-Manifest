@@ -112,10 +112,9 @@ spec:
 apiVersion: content.hauler.cattle.io/v1alpha1
 kind: Files
 metadata:
-  name: splunk-hauler-files
+  name: splunk-uf-hauler-files
 spec:
   files:
-    - path: https://download.splunk.com/products/splunk/releases/9.3.2/linux/splunk-9.3.2-d8bb32809498.x86_64.rpm
     - path: https://download.splunk.com/products/universalforwarder/releases/9.3.2/linux/splunkforwarder-9.3.2-d8bb32809498.x86_64.rpm
     - path: https://download.splunk.com/products/universalforwarder/releases/9.3.2/windows/splunkforwarder-9.3.2-d8bb32809498-x64-release.msi
 
