@@ -21,14 +21,6 @@
         "patch"
       ],
       "automerge": true
-    },
-    {
-      "description": "Define datasource and versioning for Cribl TGZ files",
-      "matchDepNames": [
-        "cribl-tgz-file"
-      ],
-      "registryUrlTemplate": "https://cribl.io/download",
-      "versioningTemplate": "regex:data-value=\"(?<newValue>https://cdn\\.cribl\\.io/dl/(?<version>\\d+\\.\\d+\\.\\d+)/cribl-\\d+\\.\\d+\\.\\d+-[a-f0-9]+-linux-x64\\.tgz)\""
     }
   ],
   "customManagers": [
@@ -64,7 +56,9 @@
       ],
       "depNameTemplate": "cribl-tgz-file",
       "datasourceTemplate": "url",
-      "extractVersionTemplate": "^https://cdn\\.cribl\\.io/dl/(?<version>\\d+\\.\\d+\\.\\d+)/"
+      "extractVersionTemplate": "^https://cdn\\.cribl\\.io/dl/(?<version>\\d+\\.\\d+\\.\\d+)/",
+      "registryUrlTemplate": "https://cribl.io/download",
+      "versioningTemplate": "regex:data-value=\"(?<newValue>https://cdn\\.cribl\\.io/dl/(?<version>\\d+\\.\\d+\\.\\d+)/cribl-\\d+\\.\\d+\\.\\d+-[a-f0-9]+-linux-x64\\.tgz)\""
     }
   ]
 }
