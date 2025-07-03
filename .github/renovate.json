@@ -44,7 +44,8 @@
       "matchStrings": [
         "#\\s*renovate:\\s*datasource=(?<datasource>helm)\\s*depName=(?<depName>.*?)\\s*registryUrl=(?<registryUrl>.*?)[\\s\\S]*?version:\\s*(?<currentValue>\\S+)"
       ],
-      "datasourceTemplate": "helm"
+      "datasourceTemplate": "helm",
+      "registryUrlTemplate": "{{{registryUrl}}}"
     },
     {
       "customType": "regex",
@@ -57,7 +58,7 @@
       ],
       "datasourceTemplate": "custom.cribl-releases",
       "depNameTemplate": "cribl",
-      "extractVersionTemplate": "^v?(?<version>\\d+\\.\\d+\\.\\d+)$"
+      "extractVersionTemplate": "Cribl\\s*Stream\\s*(?<version>\\d+\\.\\d+\\.\\d+)"
     }
   ],
   "customDatasources": {
