@@ -130,4 +130,4 @@ metadata:
   name: cribl-hauler-files
 spec:
   files:
-    - path: https://cdn.cribl.io/dl/4.9.3/cribl-4.9.3-25d56bdd-linux-x64.tgz
+    - path: https://cdn.cribl.io/dl/4.12.2/cribl-4.12.2-25d56bdd-linux-x64.tgz
