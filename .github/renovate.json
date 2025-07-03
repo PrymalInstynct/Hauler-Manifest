@@ -3,9 +3,6 @@
   "extends": [
     "config:recommended"
   ],
-  "allowedCommands": [
-    "sed -i -E 's\\|(https://cdn\\.cribl\\.io/dl/([0-9]+\\.[0-9]+\\.[0-9]+)/)cribl-.*?-linux-x64\\.tgz\\|\\\\1cribl-\\\\2-MANUAL-HASH-UPDATE-NEEDED-linux-x64.tgz\\|' /test-hauler-manifest.yaml"
-  ],
   "packageRules": [
     {
       "description": "Group all Hauler manifest updates",
@@ -24,21 +21,6 @@
         "patch"
       ],
       "automerge": true
-    },
-    {
-      "description": "Handle Cribl TGZ hash update",
-      "matchDepNames": [
-        "criblio/helm-charts"
-      ],
-      "postUpgradeTasks": {
-        "commands": [
-          "sed -i -E 's|(https://cdn\\.cribl\\.io/dl/([0-9]+\\.[0-9]+\\.[0-9]+)/)cribl-.*?-linux-x64\\.tgz|\\1cribl-\\2-MANUAL-HASH-UPDATE-NEEDED-linux-x64.tgz|' {{{parentDir}}}/test-hauler-manifest.yaml"
-        ],
-        "fileFilters": [
-          "**/*"
-        ],
-        "executionMode": "branch"
-      }
     }
   ],
   "customManagers": [
@@ -66,15 +48,18 @@
     },
     {
       "customType": "regex",
-      "description": "Update Cribl files in Hauler manifests",
+      "description": "Update Cribl TGZ files in Hauler manifests",
       "managerFilePatterns": [
         "test-hauler-manifest.yaml"
       ],
       "matchStrings": [
-        "path:\\s*https://cdn\\.cribl\\.io/dl/(?<currentValue>\\d+\\.\\d+\\.\\d+)/cribl-.*?-linux-x64\\.tgz"
+        "(path:\\s*https://cdn\\.cribl\\.io/dl/)(?<currentValue>.*)"
       ],
-      "datasourceTemplate": "github-tags",
-      "depNameTemplate": "criblio/helm-charts"
+      "datasourceTemplate": "url",
+      "depNameTemplate": "https://docs.cribl.io/stream/release-notes",
+      "versioningTemplate": "regex",
+      "extractVersionTemplate": "^/dl/(?<version>\\d+\\.\\d+\\.\\d+)/cribl-\\d+\\.\\d+\\.\\d+-(?<digest>[a-f0-9]+)-linux-x64\\.tgz$",
+      "replaceStringTemplate": "{{{depName}}}{{{newValue}}}"
     }
   ]
 }
