@@ -62,11 +62,9 @@
   ],
   "customDatasources": {
     "cribl-releases": {
-      "format": "html",
+      "format": "plain",
       "defaultRegistryUrlTemplate": "https://cribl.io/download",
-      "transformTemplates": [
-        "{\"releases\": $..['data-value']}"
-      ]
+      "versioning": "regex:data-value=\"(?<newValue>https://cdn\\.cribl\\.io/dl/(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)/cribl-\\d+\\.\\d+\\.\\d+-(?<digest>[a-f0-9]+)-linux-x64\\.tgz)\""
     }
   }
 }
