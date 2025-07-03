@@ -21,6 +21,14 @@
         "patch"
       ],
       "automerge": true
+    },
+    {
+      "description": "Define datasource and versioning for Cribl TGZ files",
+      "matchDepNames": [
+        "cribl-tgz-file"
+      ],
+      "datasourceTemplate": "url",
+      "versioningTemplate": "regex:data-value=\"(?<newValue>https://cdn\\.cribl\\.io/dl/(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)/cribl-.*?-(?<digest>[a-f0-9]+)-linux-x64\\.tgz)\""
     }
   ],
   "customManagers": [
@@ -48,16 +56,16 @@
     },
     {
       "customType": "regex",
-      "description": "Update Cribl TGZ files in Hauler manifests",
+      "description": "Find Cribl TGZ files in Hauler manifests",
       "managerFilePatterns": [
         "test-hauler-manifest.yaml"
       ],
       "matchStrings": [
         "path:\\s*(?<currentValue>https://cdn\\.cribl\\.io/dl/.*)"
       ],
+      "depNameTemplate": "cribl-tgz-file",
       "datasourceTemplate": "url",
-      "depNameTemplate": "https://cribl.io/download",
-      "versioningTemplate": "regex:data-value=\"(?<newValue>https://cdn\\.cribl\\.io/dl/(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)/cribl-.*?-(?<digest>[a-f0-9]+)-linux-x64\\.tgz)\""
+      "depType": "file"
     }
   ]
 }
