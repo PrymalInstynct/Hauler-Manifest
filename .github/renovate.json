@@ -45,6 +45,25 @@
         "datasource=(?<datasource>helm)\\s*depName=(?<depName>.*?)\\s*registryUrl=(?<registryUrl>.*?)\\s*-\\s+name:.*\\s+repoURL:.*\\s+version:\\s*(?<currentValue>.*)"
       ],
       "datasourceTemplate": "helm"
+    },
+    {
+      "customType": "regex",
+      "description": "Update Cribl files in Hauler manifests",
+      "fileMatch": [
+        ".*-hauler-manifest\\.ya?ml$"
+      ],
+      "matchStrings": [
+        "path:\\s+https://cdn\\.cribl\\.io/dl/(?<currentValue>.*?)/cribl-.*?\\.tgz"
+      ],
+      "datasourceTemplate": "custom.cribl-releases",
+      "depNameTemplate": "cribl"
     }
-  ]
+  ],
+  "customDatasources": {
+    "cribl-releases": {
+      "format": "html",
+      "defaultRegistryUrlTemplate": "https://docs.cribl.io/stream/release-notes",
+      "extractVersionTemplate": "^v?(?<version>\\d+\\.\\d+\\.\\d+)$"
+    }
+  }
 }
