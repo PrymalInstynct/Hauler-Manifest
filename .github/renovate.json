@@ -56,14 +56,14 @@
         "path:\\s+https://cdn\\.cribl\\.io/dl/(?<currentValue>.*?)/cribl-.*?\\.tgz"
       ],
       "datasourceTemplate": "custom.cribl-releases",
-      "depNameTemplate": "cribl"
+      "depNameTemplate": "cribl",
+      "extractVersionTemplate": "^v?(?<version>\\d+\\.\\d+\\.\\d+)$"
     }
   ],
   "customDatasources": {
     "cribl-releases": {
       "format": "html",
-      "defaultRegistryUrlTemplate": "https://docs.cribl.io/stream/release-notes",
-      "extractVersionTemplate": "^v?(?<version>\\d+\\.\\d+\\.\\d+)$"
+      "defaultRegistryUrlTemplate": "https://docs.cribl.io/stream/release-notes"
     }
   }
 }
