@@ -23,6 +23,12 @@
       "automerge": true
     }
   ],
+  "customDatasources": {
+    "cribl-releases": {
+      "format": "html",
+      "defaultRegistryUrlTemplate": "https://docs.cribl.io/stream/release-notes"
+    }
+  },
   "customManagers": [
     {
       "customType": "regex",
@@ -59,11 +65,5 @@
       "depNameTemplate": "cribl",
       "extractVersionTemplate": "^v?(?<version>\\d+\\.\\d+\\.\\d+)$"
     }
-  ],
-  "customDatasources": {
-    "cribl-releases": {
-      "format": "html",
-      "defaultRegistryUrlTemplate": "https://docs.cribl.io/stream/release-notes"
-    }
-  }
+  ]
 }
