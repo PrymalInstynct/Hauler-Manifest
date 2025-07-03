@@ -27,8 +27,8 @@
       "matchDepNames": [
         "cribl-tgz-file"
       ],
-      "datasourceTemplate": "url",
-      "versioningTemplate": "regex:data-value=\"(?<newValue>https://cdn\\.cribl\\.io/dl/(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)/cribl-\\d+\\.\\d+\\.\\d+-(?<digest>[a-f0-9]+)-linux-x64\\.tgz)\""
+      "registryUrlTemplate": "https://cribl.io/download",
+      "versioningTemplate": "regex:data-value=\"(?<newValue>https://cdn\\.cribl\\.io/dl/(?<version>\\d+\\.\\d+\\.\\d+)/cribl-\\d+\\.\\d+\\.\\d+-[a-f0-9]+-linux-x64\\.tgz)\""
     }
   ],
   "customManagers": [
@@ -60,10 +60,11 @@
         "test-hauler-manifest.yaml"
       ],
       "matchStrings": [
-        "path:\\s*(?<currentValue>https://cdn\\.cribl\\.io/dl/.*)"
+        "path:\\s*(?<currentValue>https://cdn\\.cribl\\.io/dl/.*\\.tgz)"
       ],
       "depNameTemplate": "cribl-tgz-file",
-      "datasourceTemplate": "url"
+      "datasourceTemplate": "url",
+      "extractVersionTemplate": "^https://cdn\\.cribl\\.io/dl/(?<version>\\d+\\.\\d+\\.\\d+)/"
     }
   ]
 }
