@@ -42,7 +42,7 @@
         ".*-?hauler-manifest\\.ya?ml$"
       ],
       "matchStrings": [
-        "#\\s*renovate:\\s*datasource=(?<datasource>helm)\\s*depName=(?<depName>.*?)\\s*registryUrl=(?<registryUrl>.*?)\\s*\\n\\s*-\\s+name:.*?\\n\\s+repoURL:.*?\\n\\s+version:\\s*(?<currentValue>.*)"
+        "#\\s*renovate:\\s*datasource=(?<datasource>helm)\\s*depName=(?<depName>.*?)\\s*registryUrl=(?<registryUrl>.*?)[\\s\\S]*?version:\\s*(?<currentValue>.*)"
       ],
       "datasourceTemplate": "helm"
     },
