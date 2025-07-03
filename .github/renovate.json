@@ -43,7 +43,7 @@
         "(^|/).*hauler-manifest\\.ya?ml$"
       ],
       "matchStrings": [
-        "kind:\\s*Charts(?:.|\\n)*?spec:\\s*\\n\\s*charts:\\s*\\n(?:\\s*-\\s+name:\\s*['\"]?(?<depName>[\\w.\\-]+)['\"]?\\s*\\n\\s*repoURL:\\s*(?<registryUrl>https?://[^\\s]+)\\s*\\n\\s*version:\\s*['\"]?(?<currentValue>v?[\\d.]+(:?-[\\w.\\-]+)?)['\"]?"
+        "kind:\\s*Charts(?:.|\\n)*?spec:\\s*\\n\\s*charts:\\s*\\n(?:\\s*-\\s+name:\\s*['\"]?(?<depName>[\\w.\\-]+)['\"]?\\s*\\n\\s*version:\\s*['\"]?(?<currentValue>v?[\\d.]+(:?-[\\w.\\-]+)?)['\"]?\\s*\\n\\s*repoURL:\\s*(?<registryUrl>https?://[^\\s]+)\\s*\\n?)+"
       ],
       "datasourceTemplate": "helm",
       "versioningTemplate": "semver"
