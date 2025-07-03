@@ -47,19 +47,20 @@
       "datasourceTemplate": "helm",
       "registryUrlTemplate": "{{{registryUrl}}}"
     },
-    {
-      "customType": "regex",
-      "description": "Update Cribl files in Hauler manifests",
-      "managerFilePatterns": [
-        "test-hauler-manifest.yaml"
-      ],
-      "matchStrings": [
-        "path:\\s*https://cdn\\.cribl\\.io/dl/(?<currentValue>\\d+\\.\\d+\\.\\d+)/cribl-.*?\\.tgz"
-      ],
-      "datasourceTemplate": "custom.cribl-releases",
-      "depNameTemplate": "cribl",
-      "extractVersionTemplate": "Cribl\\s*Stream\\s*(?<version>\\d+\\.\\d+\\.\\d+)"
-    }
+{
+  "customType": "regex",
+  "description": "Update Cribl files in Hauler manifests",
+  "managerFilePatterns": [
+    "test-hauler-manifest.yaml"
+  ],
+  "matchStrings": [
+    "path:\\s*https://cdn\\.cribl\\.io/dl/(?<currentValue>\\d+\\.\\d+\\.\\d+)/cribl-.*?-linux-x64\\.tgz"
+  ],
+  "datasourceTemplate": "custom.cribl-releases",
+  "depNameTemplate": "cribl-tgz-file",
+  "replaceStringTemplate": "path: https://cdn.cribl.io/dl/{{newValue}}/cribl-{{newValue}}-MANUAL-HASH-UPDATE-NEEDED-linux-x64.tgz",
+  "extractVersionTemplate": "Cribl Stream (?<version>\\d+\\.\\d+\\.\\d+)"
+}
   ],
   "customDatasources": {
     "cribl-releases": {
