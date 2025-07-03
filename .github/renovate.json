@@ -31,7 +31,7 @@
         ".*-?hauler-manifest\\.ya?ml$"
       ],
       "matchStrings": [
-        "datasource=(?<datasource>docker)\\s*\\n\\s*-\\s+name:\\s+(?<depName>.*?):(?<currentValue>.*)"
+        "#\\s*renovate:\\s*datasource=(?<datasource>docker)\\s*\\n\\s*-\\s+name:\\s+(?<depName>.*?):(?<currentValue>.*)"
       ],
       "datasourceTemplate": "docker"
     },
@@ -42,7 +42,7 @@
         ".*-?hauler-manifest\\.ya?ml$"
       ],
       "matchStrings": [
-        "datasource=(?<datasource>helm)\\s*depName=(?<depName>.*?)\\s*registryUrl=(?<registryUrl>.*?)\\s*-\\s+name:.*\\s+repoURL:.*\\s+version:\\s*(?<currentValue>.*)"
+        "#\\s*renovate:\\s*datasource=(?<datasource>helm)\\s*depName=(?<depName>.*?)\\s*registryUrl=(?<registryUrl>.*?)\\s*\\n\\s*-\\s+name:.*?\\n\\s+repoURL:.*?\\n\\s+version:\\s*(?<currentValue>.*)"
       ],
       "datasourceTemplate": "helm"
     },
