@@ -58,7 +58,7 @@
       "datasourceTemplate": "url",
       "extractVersionTemplate": "^https://cdn\\.cribl\\.io/dl/(?<version>\\d+\\.\\d+\\.\\d+)/",
       "registryUrlTemplate": "https://cribl.io/download",
-      "versioningTemplate": "regex:data-value=\"(?<newValue>https://cdn\\.cribl\\.io/dl/(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)/cribl-\\d+\\.\\d+\\.\\d+-(?<digest>[a-f0-9]+)-linux-x64\\.tgz)\""
+      "versioningTemplate": "regex:data-value=\"(?<newValue>https://cdn\\.cribl\\.io/dl/(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)/cribl-\\d+\\.\\d+\\.\\d+-[a-f0-9]+-linux-x64\\.tgz)\""
     }
   ]
 }
