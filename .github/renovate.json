@@ -31,7 +31,7 @@
         "test-hauler-manifest.yaml"
       ],
       "matchStrings": [
-        "#\\s*renovate:\\s*datasource=(?<datasource>docker)\\s*\\n\\s*-\\s*name:\\s*(?<depName>.*?):(?<currentValue>.*)"
+        "#\\s*renovate:\\s*datasource=(?<datasource>docker)[\\s\\S]*?-\\s*name:\\s*(?<depName>.*?):(?<currentValue>\\S+)"
       ],
       "datasourceTemplate": "docker"
     },
@@ -42,7 +42,7 @@
         "test-hauler-manifest.yaml"
       ],
       "matchStrings": [
-        "#\\s*renovate:\\s*datasource=(?<datasource>helm)\\s*depName=(?<depName>.*?)\\s*registryUrl=(?<registryUrl>.*?)[\\s\\S]*?version:\\s*(?<currentValue>.*)"
+        "#\\s*renovate:\\s*datasource=(?<datasource>helm)\\s*depName=(?<depName>.*?)\\s*registryUrl=(?<registryUrl>.*?)[\\s\\S]*?version:\\s*(?<currentValue>\\S+)"
       ],
       "datasourceTemplate": "helm"
     },
@@ -53,7 +53,7 @@
         "test-hauler-manifest.yaml"
       ],
       "matchStrings": [
-        "path:\\s+https://cdn\\.cribl\\.io/dl/(?<currentValue>.*?)/cribl-.*?\\.tgz"
+        "path:\\s*https://cdn\\.cribl\\.io/dl/(?<currentValue>\\d+\\.\\d+\\.\\d+)/cribl-.*?\\.tgz"
       ],
       "datasourceTemplate": "custom.cribl-releases",
       "depNameTemplate": "cribl",
