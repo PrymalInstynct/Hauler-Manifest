@@ -55,8 +55,8 @@
         "path:\\s*(?<currentValue>https://cdn\\.cribl\\.io/dl/.*\\.tgz)"
       ],
       "depNameTemplate": "cribl-tgz-file",
-      "datasourceTemplate": "regex",
-      "currentValueTemplate": "\"url\":\"{{currentValue}}\"",
+      "datasourceTemplate": "url",
+      "extractVersionTemplate": "^https://cdn\\.cribl\\.io/dl/(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)/",
       "registryUrlTemplate": "https://cribl.io/download",
       "versioningTemplate": "regex:\"url\":\"(?<newValue>https://cdn\\.cribl\\.io/dl/(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)/cribl-.*?-[a-f0-9]+-linux-x64\\.tgz)\""
     }
