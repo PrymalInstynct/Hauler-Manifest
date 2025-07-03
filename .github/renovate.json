@@ -49,8 +49,8 @@
     {
       "customType": "regex",
       "description": "Update Cribl files in Hauler manifests",
-      "fileMatch": [
-        ".*-hauler-manifest\\.ya?ml$"
+      "managerFilePatterns": [
+        "/.*-hauler-manifest\\.ya?ml$/"
       ],
       "matchStrings": [
         "path:\\s+https://cdn\\.cribl\\.io/dl/(?<currentValue>.*?)/cribl-.*?\\.tgz"
