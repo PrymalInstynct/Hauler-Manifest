@@ -69,11 +69,11 @@ spec:
     # renovate: datasource=helm depName=splunk-enterprise registryUrl=https://splunk.github.io/splunk-operator
     - name: splunk-enterprise
       repoURL: https://splunk.github.io/splunk-operator
-      version: 2.8.0
+      version: 2.8.1
     # renovate: datasource=helm depName=splunk-operator registryUrl=https://splunk.github.io/splunk-operator
     - name: splunk-operator
       repoURL: https://splunk.github.io/splunk-operator
-      version: 2.8.0
+      version: 2.8.1
 ---
 apiVersion: content.hauler.cattle.io/v1alpha1
 kind: Images
@@ -86,7 +86,7 @@ spec:
     # renovate: datasource=docker
     - name: docker.io/splunk/splunk:9.4.3
     # renovate: datasource=docker
-    - name: docker.io/splunk/splunk-operator:2.8.0
+    - name: docker.io/splunk/splunk-operator:2.8.1
     # renovate: datasource=docker
     - name: quay.io/brancz/kube-rbac-proxy:v0.19.1
 
