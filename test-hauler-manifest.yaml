@@ -37,11 +37,11 @@ spec:
     # renovate: datasource=helm depName=kube-vip registryUrl=https://kube-vip.github.io/helm-charts
     - name: kube-vip
       repoURL: https://kube-vip.github.io/helm-charts
-      version: 0.6.6
+      version: 0.7.1
     # renovate: datasource=helm depName=kube-vip-cloud-provider registryUrl=https://kube-vip.github.io/helm-charts
     - name: kube-vip-cloud-provider
       repoURL: https://kube-vip.github.io/helm-charts
-      version: 0.2.5
+      version: 0.2.6
 ---
 apiVersion: content.hauler.cattle.io/v1alpha1
 kind: Images
