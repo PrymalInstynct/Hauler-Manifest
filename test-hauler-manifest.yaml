@@ -37,7 +37,7 @@ spec:
     # renovate: datasource=helm depName=kube-vip registryUrl=https://kube-vip.github.io/helm-charts
     - name: kube-vip
       repoURL: https://kube-vip.github.io/helm-charts
-      version: 0.8.0
+      version: 0.8.1
     # renovate: datasource=helm depName=kube-vip-cloud-provider registryUrl=https://kube-vip.github.io/helm-charts
     - name: kube-vip-cloud-provider
       repoURL: https://kube-vip.github.io/helm-charts
