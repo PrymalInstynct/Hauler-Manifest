@@ -37,11 +37,11 @@ spec:
     # renovate: datasource=helm depName=kube-vip registryUrl=https://kube-vip.github.io/helm-charts
     - name: kube-vip
       repoURL: https://kube-vip.github.io/helm-charts
-      version: 0.8.2
+      version: 0.9.0
     # renovate: datasource=helm depName=kube-vip-cloud-provider registryUrl=https://kube-vip.github.io/helm-charts
     - name: kube-vip-cloud-provider
       repoURL: https://kube-vip.github.io/helm-charts
-      version: 0.2.7
+      version: 0.2.9
 ---
 apiVersion: content.hauler.cattle.io/v1alpha1
 kind: Images
@@ -84,7 +84,7 @@ metadata:
 spec:
   images:
     # renovate: datasource=docker
-    - name: docker.io/splunk/splunk:9.4.4
+    - name: docker.io/splunk/splunk:9.4.5
     # renovate: datasource=docker
     - name: docker.io/splunk/splunk-operator:2.8.1
     # renovate: datasource=docker
