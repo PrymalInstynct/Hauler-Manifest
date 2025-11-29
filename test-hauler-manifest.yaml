@@ -84,7 +84,7 @@ metadata:
 spec:
   images:
     # renovate: datasource=docker
-    - name: docker.io/splunk/splunk:9.4.6
+    - name: docker.io/splunk/splunk:9.4.7
     # renovate: datasource=docker
     - name: docker.io/splunk/splunk-operator:2.8.1
     # renovate: datasource=docker
