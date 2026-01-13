@@ -88,7 +88,7 @@ spec:
     # renovate: datasource=docker
     - name: docker.io/splunk/splunk-operator:2.8.1
     # renovate: datasource=docker
-    - name: quay.io/brancz/kube-rbac-proxy:v0.20.1
+    - name: quay.io/brancz/kube-rbac-proxy:v0.20.2
 
 ### -----------------------------------------
 ### Cribl
