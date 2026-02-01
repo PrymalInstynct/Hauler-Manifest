@@ -5,22 +5,7 @@
   ],
   "packageRules": [
     {
-      "description": "Group all Hauler manifest updates",
-      "matchManagers": [
-        "custom.regex"
-      ],
-      "groupName": "hauler-manifest-updates"
-    },
-    {
-      "description": "Automerge non-major updates for Hauler assets",
-      "matchManagers": [
-        "custom.regex"
-      ],
-      "matchUpdateTypes": [
-        "minor",
-        "patch"
-      ],
-      "automerge": true
+      "description": "(none) — keep default per-dependency PR behavior for custom regex managers"
     }
   ],
   "customManagers": [
@@ -28,20 +13,26 @@
       "customType": "regex",
       "description": "Update Docker images in Hauler manifests",
       "managerFilePatterns": [
-        "test-hauler-manifest.yaml"
+        "**/*hauler*.yml",
+        "**/*hauler*.yaml",
+        "**/*manifest*.yml",
+        "**/*manifest*.yaml"
       ],
       "matchStrings": [
-        "#\\s*renovate:\\s*datasource=(?<datasource>docker)[\\s\\S]*?-\\s*name:\\s*(?<depName>.*?):(?<currentValue>\\S+)"
+        "#\s*renovate:\s*datasource=(?<datasource>docker)[\s\S]*?-\s*name:\s*(?<depName>.*?):(?<currentValue>\S+)"
       ]
     },
     {
       "customType": "regex",
       "description": "Update Helm charts in Hauler manifests",
       "managerFilePatterns": [
-        "test-hauler-manifest.yaml"
+        "**/*hauler*.yml",
+        "**/*hauler*.yaml",
+        "**/*manifest*.yml",
+        "**/*manifest*.yaml"
       ],
       "matchStrings": [
-        "#\\s*renovate:\\s*datasource=(?<datasource>helm)\\s*depName=(?<depName>\\S+)\\s*registryUrl=(?<registryUrl>\\S+)[\\s\\S]*?version:\\s*(?<currentValue>\\S+)"
+        "#\s*renovate:\s*datasource=(?<datasource>helm)\s*depName=(?<depName>\S+)\s*registryUrl=(?<registryUrl>\S+)[\s\S]*?version:\s*(?<currentValue>\S+)"
       ],
       "datasourceTemplate": "helm"
     },
@@ -49,16 +40,19 @@
       "customType": "regex",
       "description": "Find Cribl TGZ files in Hauler manifests",
       "managerFilePatterns": [
-        "test-hauler-manifest.yaml"
+        "**/*hauler*.yml",
+        "**/*hauler*.yaml",
+        "**/*manifest*.yml",
+        "**/*manifest*.yaml"
       ],
       "matchStrings": [
-        "path:\\s*(?<currentValue>https://cdn\\.cribl\\.io/dl/.*\\.tgz)"
+        "path:\s*(?<currentValue>https://cdn\.cribl\.io/dl/.*\.tgz)"
       ],
       "depNameTemplate": "cribl-tgz-file",
       "datasourceTemplate": "url",
-      "extractVersionTemplate": "^https://cdn\\.cribl\\.io/dl/(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)/",
+      "extractVersionTemplate": "^https://cdn\.cribl\.io/dl/(?<major>\d+)\.(?<minor>\d+)\.(?<patch>\d+)/",
       "registryUrlTemplate": "https://cribl.io/download",
-      "versioningTemplate": "regex:\"url\":\"(?<newValue>https://cdn\\.cribl\\.io/dl/(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)/cribl-.*?-[a-f0-9]+-linux-x64\\.tgz)\""
+      "versioningTemplate": "regex:\"url\":\"(?<newValue>https://cdn\.cribl\.io/dl/(?<major>\d+)\.(?<minor>\d+)\.(?<patch>\d+)/cribl-.*?-[a-f0-9]+-linux-x64\.tgz)\""
     }
   ]
 }
