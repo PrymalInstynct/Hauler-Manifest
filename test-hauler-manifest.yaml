@@ -130,9 +130,9 @@ metadata:
   name: cribl-hauler-files
 spec:
   files:
-    - path: https://cdn.cribl.io/dl/4.12.2/cribl-4.16.1-20904e45-linux-x64.tgz
-    - path: https://cdn.cribl.io/dl/4.12.2/cribl-4.16.1-20904e45-linux-x64.tgz.sha256
-    - path: https://cdn.cribl.io/dl/4.12.2/cribl-4.16.1-20904e45-linux-x64.tgz.md5
-    - path: https://cdn.cribl.io/dl/4.12.2/cribl-4.16.1-20904e45-win32-x64.msi
-    - path: https://cdn.cribl.io/dl/4.12.2/cribl-4.16.1-20904e45-win32-x64.msi.sha256
-    - path: https://cdn.cribl.io/dl/4.12.2/cribl-4.16.1-20904e45-win32-x64.msi.md5
+    - path: https://cdn.cribl.io/dl/4.16.1/cribl-4.16.1-20904e45-linux-x64.tgz
+    - path: https://cdn.cribl.io/dl/4.16.1/cribl-4.16.1-20904e45-linux-x64.tgz.sha256
+    - path: https://cdn.cribl.io/dl/4.16.1/cribl-4.16.1-20904e45-linux-x64.tgz.md5
+    - path: https://cdn.cribl.io/dl/4.16.1/cribl-4.16.1-20904e45-win32-x64.msi
+    - path: https://cdn.cribl.io/dl/4.16.1/cribl-4.16.1-20904e45-win32-x64.msi.sha256
+    - path: https://cdn.cribl.io/dl/4.16.1/cribl-4.16.1-20904e45-win32-x64.msi.md5
